@@ -2,6 +2,14 @@ require("dotenv").config();
 
 const axios = require("axios");
 
+var http = require("http");
+
+http.createServer(function(req, res) {
+    res.write("Hello World!");
+    res.end(); 
+  }).listen(process.env.PORT || 5000); 
+
+
 const key = process.env.CLOCKIFY_API_KEY || "";
 const keys = [
   { key, h: 0 }
@@ -30,7 +38,7 @@ if (!key) {
     d = new Date();
 
     if (d.getDay() != 0 && d.getDay() != 6) {
-      if (d.getHours() == 15 && d.getMinutes() == 53) {
+      if (d.getHours() == 16 && d.getMinutes() == 5) {
         async function process(key, i, h) {
           console.log("entrou");
 
