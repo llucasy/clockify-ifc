@@ -44,7 +44,7 @@ if (!key) {
     d = new Date();
 
     if (d.getDay() != 0 && d.getDay() != 6) {
-      if (d.getHours() == 17 && d.getMinutes() == 6) {
+      if (d.getHours() == 17 && d.getMinutes() == 15) {
         async function process(key, i, h) {
           console.log("entrou");
 
