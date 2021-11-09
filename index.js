@@ -1,13 +1,19 @@
 require("dotenv").config();
 
 const axios = require("axios");
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
 
-var http = require("http");
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
-http.createServer(function(req, res) {
-    res.write("Hello World!");
-    res.end(); 
-  }).listen(process.env.PORT || 5000); 
+app.get('/', (req, res) => {
+  res.send('olá')
+})
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log('servidor no ar'))
 
 
 const key = process.env.CLOCKIFY_API_KEY || "";
