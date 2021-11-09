@@ -4,10 +4,7 @@ const axios = require("axios");
 
 const key = process.env.CLOCKIFY_API_KEY || "";
 const keys = [
-  { key, h: 0 },
-  { key: process.env.MATHEUS_API, h: 0 },
-  { key: process.env.MARCOS_API, h: 1 },
-  { key: process.env.MARIA_API, h: 0 },
+  { key, h: 0 }
 ];
 const url = `https://api.clockify.me/api/v1`;
 
@@ -33,7 +30,7 @@ if (!key) {
     d = new Date();
 
     if (d.getDay() != 0 && d.getDay() != 6) {
-      if (d.getHours() == 17 && d.getMinutes() == 01) {
+      if (d.getHours() == 15 && d.getMinutes() == 30) {
         async function process(key, i, h) {
           console.log("entrou");
 
