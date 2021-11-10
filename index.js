@@ -43,9 +43,10 @@ if (!key) {
   setInterval(async () => {
     d = new Date();
 
-    console.log(d)
+    console.log(d.getDay())
 
-    if (d.getDay() != 0 && d.getDay() != 6) {
+    if (d.getDay() !== 0 && d.getDay() !== 6) {
+      console.log('funcionou primeiro if');
       if (d.getHours() == 1 && d.getMinutes() == 15) {
         async function process(key, i, h) {
           console.log("entrou");
