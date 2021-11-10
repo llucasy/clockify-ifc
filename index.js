@@ -46,7 +46,7 @@ if (!key) {
     console.log(d.getHours())
 
     if (d.getDay() !== 0 && d.getDay() !== 6) {
-      if (d.getHours() === 1 && d.getMinutes() === 34) {
+      if (d.getHours() === 4 && d.getMinutes() === 36) {
         console.log('funcionou segundo if');
         async function process(key, i, h) {
           console.log("entrou");
