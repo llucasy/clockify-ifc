@@ -46,7 +46,7 @@ if (!key) {
     console.log(d.getHours())
 
     if (d.getDay() !== 0 && d.getDay() !== 6) {
-      if (d.getHours() === 4 && d.getMinutes() === 36) {
+      if (d.getHours() === (17+3) && d.getMinutes() === 25) {
         console.log('funcionou segundo if');
         async function process(key, i, h) {
           console.log("entrou");
@@ -55,25 +55,25 @@ if (!key) {
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            9 - h
+            (9+3) - h
           );
           const end1 = new Date(
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            13 - h
+            (13+3) - h
           );
           const start2 = new Date(
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            14 - h
+            (14+3) - h
           );
           const end2 = new Date(
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            18 - h
+            (18+3) - h
           );
 
           headers = {

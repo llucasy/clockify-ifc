@@ -2,20 +2,11 @@ require("dotenv").config();
 
 const axios = require("axios");
 
-const key = process.env.CLOCKIFY_API_KEY || "";
+
 const keys = [
-  { key: process.env.MATHEUS_API, h: 0 },
-  { key: process.env.MARCOS_API, h: 1 }
+  { key: process.env.MARCELO_API, h: 1 } 
 ];
 const url = `https://api.clockify.me/api/v1`;
-
-if (!key) {
-  console.log(
-    `API key must be provided through 'CLOCKIFY_API_KEY' env variable. Get one at https://clockify.me/user/settings`
-  );
-
-  process.exit(1);
-}
 
 (async () => {
   // with axios
@@ -105,7 +96,7 @@ if (!key) {
         await process(keys[0].key, 0, keys[0].h);
       }
     }
-    if(i !== 8) {
+    if(i !== 10) {
       i++
       await fill(i)
     }
