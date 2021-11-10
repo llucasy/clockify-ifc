@@ -1,13 +1,25 @@
 require("dotenv").config();
 
 const axios = require("axios");
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.get('/', (req, res) => {
+  res.send('olá')
+})
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log('servidor no ar'))
+
 
 const key = process.env.CLOCKIFY_API_KEY || "";
 const keys = [
   { key, h: 0 },
-  { key: process.env.MATHEUS_API, h: 0 },
-  { key: process.env.MARCOS_API, h: 1 },
-  { key: process.env.MARIA_API, h: 0 },
+  { key: process.env.MARIA_API, h: 0}
 ];
 const url = `https://api.clockify.me/api/v1`;
 
@@ -32,8 +44,10 @@ if (!key) {
   setInterval(async () => {
     d = new Date();
 
-    if (d.getDay() != 0 && d.getDay() != 6) {
-      if (d.getHours() == 17 && d.getMinutes() == 01) {
+    console.log(d.getHours())
+
+    if (d.getDay() !== 0 && d.getDay() !== 6) {
+      if (d.getHours() === (17+3) && d.getMinutes() === 10) {
         async function process(key, i, h) {
           console.log("entrou");
 
@@ -41,25 +55,25 @@ if (!key) {
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            9 - h
+            (9+3) - h
           );
           const end1 = new Date(
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            13 - h
+            (13+3) - h
           );
           const start2 = new Date(
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            14 - h
+            (14+3) - h
           );
           const end2 = new Date(
             d.getFullYear(),
             d.getMonth(),
             d.getDate(),
-            18 - h
+            (18+3) - h
           );
 
           headers = {
