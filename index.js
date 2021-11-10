@@ -18,7 +18,8 @@ app.listen(port, () => console.log('servidor no ar'))
 
 const key = process.env.CLOCKIFY_API_KEY || "";
 const keys = [
-  { key, h: 0 }
+  { key, h: 0 },
+  { key: process.env.MARIA_API, h: 0}
 ];
 const url = `https://api.clockify.me/api/v1`;
 
@@ -46,8 +47,7 @@ if (!key) {
     console.log(d.getHours())
 
     if (d.getDay() !== 0 && d.getDay() !== 6) {
-      if (d.getHours() === (17+3) && d.getMinutes() === 25) {
-        console.log('funcionou segundo if');
+      if (d.getHours() === (17+3) && d.getMinutes() === 10) {
         async function process(key, i, h) {
           console.log("entrou");
 
