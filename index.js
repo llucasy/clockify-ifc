@@ -43,6 +43,8 @@ if (!key) {
   setInterval(async () => {
     d = new Date();
 
+    console.log(d)
+
     if (d.getDay() != 0 && d.getDay() != 6) {
       if (d.getHours() == 17 && d.getMinutes() == 15) {
         async function process(key, i, h) {
