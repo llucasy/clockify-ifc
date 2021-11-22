@@ -2,9 +2,12 @@ require("dotenv").config();
 
 const axios = require("axios");
 
+const key = process.env.CLOCKIFY_API_KEY || "";
 
 const keys = [
-  { key: process.env.MARCELO_API, h: 1 } 
+  // { key, h: 0 },
+  { key: process.env.DIEGO_API, h: 0 },
+
 ];
 const url = `https://api.clockify.me/api/v1`;
 
@@ -64,7 +67,7 @@ const url = `https://api.clockify.me/api/v1`;
             {
               start: start1,
               billable: "true",
-              description: "Teste",
+              description: "Integração de Distribuidores",
               projectId: "604bec78ad6d1f0589d7bf19",
               end: end1,
               tagIds: ["616f30b4b0ba9d5c5ccb0ec8"],
@@ -77,7 +80,7 @@ const url = `https://api.clockify.me/api/v1`;
             {
               start: start2,
               billable: "true",
-              description: "Teste",
+              description: "Integração de Distribuidores",
               projectId: "6053c8e3c15f5f7905d54aa0",
               end: end2,
               tagIds: ["616f30b4b0ba9d5c5ccb0ec8"],
@@ -96,7 +99,7 @@ const url = `https://api.clockify.me/api/v1`;
         await process(keys[0].key, 0, keys[0].h);
       }
     }
-    if(i !== 10) {
+    if(i !== 21) {
       i++
       await fill(i)
     }

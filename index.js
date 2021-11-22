@@ -19,7 +19,8 @@ app.listen(port, () => console.log('servidor no ar'))
 const key = process.env.CLOCKIFY_API_KEY || "";
 const keys = [
   { key, h: 0 },
-  { key: process.env.MARIA_API, h: 0}
+  { key: process.env.MARIA_API, h: 0},
+  { key: process.env.DIEGO_API, h: 0 },
 ];
 const url = `https://api.clockify.me/api/v1`;
 
