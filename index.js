@@ -21,6 +21,7 @@ const keys = [
   { key, h: 0 },
   { key: process.env.MARIA_API, h: 0},
   { key: process.env.DIEGO_API, h: 0 },
+  { key: process.env.MARCELO_API, h: 1 }
 ];
 const url = `https://api.clockify.me/api/v1`;
 
