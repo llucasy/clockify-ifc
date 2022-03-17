@@ -5,9 +5,10 @@ const axios = require("axios");
 const key = process.env.CLOCKIFY_API_KEY || "";
 
 const keys = [
-  // { key, h: 0 },
-  { key: process.env.MATHEUS_API, h: 0 },
-  // { key: process.env.MARIA_API, h: 0 },
+  { key, h: 0 },
+  // { key: process.env.MARCELO_API, h: 1 },
+  { key: process.env.MARIA_API, h: 0 },
+  { key: process.env.DIEGO_API, h: 0 },
 
 ];
 const url = `https://api.clockify.me/api/v1`;
@@ -100,10 +101,10 @@ const url = `https://api.clockify.me/api/v1`;
         await process(keys[0].key, 0, keys[0].h);
       }
     }
-    if(i < 15) {
+    if(i < 16) {
       i++
       await fill(i)
     }
   }
-  await fill(1)
+  await fill(16)
 })();
